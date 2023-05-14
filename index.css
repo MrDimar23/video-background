@@ -1,0 +1,146 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+
+body{
+   background-color: #fffefe;
+}
+video {
+   width: 100%;
+   height: 90%;
+   object-fit: cover;
+}
+h2{
+   position: absolute;
+   color: #fffefe;
+   font-size: 2rem;
+   -webkit-text-stroke: 0.07vw rgb(255, 253, 253);
+   top:1%;
+   left:5%;
+}
+h2::before {
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   color: rgb(0, 0, 0);
+   -webkit-text-stroke: 0vw rgb(255, 255, 255);
+   overflow: hidden;
+   animation: animate 10s linear infinite;
+}
+@keyframes animate {
+   0%,10%,100% 
+   {
+      width: 0;
+   }
+   70%,90%
+   {
+      width: 100%;
+   }
+}
+.navigation {
+   z-index: 999;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 200px;
+   transition: 0.5s ease;
+}
+.navigation .navigation-items a {
+   position: relative;
+   color: rgb(0, 0, 0);
+   font-size: 1.3em;
+   font-weight: 600;
+   text-transform: uppercase;
+   text-decoration: none;
+   margin-left: 50px;
+   transition: 0.3s ease;
+   left: 40%;
+}
+.navigation .navigation-items a::before {
+   content: '';
+   position: absolute;
+   background: #ffffff;
+   width: 0;
+   height: 3px;
+   bottom: 0;
+   left: 0;
+   transition: 0.3s ease;
+}
+.navigation .navigation-items a:hover:before {
+   width: 100%;
+}
+
+P{
+   position: absolute;
+   color: rgb(28, 31, 31);
+   padding: 5px 62px;
+   top: 240px;
+   left: 1%;
+   font-size: 2.5rem;
+   font-weight: 600;
+
+}
+.head-gallery {
+   text-align:center;
+   font-size: 2rem;
+   margin-top: 10px;
+}
+.gallery {
+   position: relative;
+   width: 100%;
+   background: rgb(243, 243, 243);
+   padding: 30px;
+   align-items: center;
+   display: flex;
+}
+.gallery .card {
+   position: relative;
+   max-width: 450px;
+   height: 150px;
+   display: flex;
+   margin: 30px 20px;
+   padding: 30px 15px;
+   flex-direction: column;
+   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+   transition: 0.8s ease-in-out;
+
+}
+.gallery .card:hover {
+   height: 450px;
+}
+
+.gallery .card .card-text{
+   position: relative;
+   margin-top: -140px;
+   padding: 10px 15px;
+   text-align: center;
+   visibility: hidden;
+   opacity: 0;
+   transition: 0.3s ease-in-out;
+
+}
+.gallery .card:hover .card-text {
+   visibility: visible;
+   opacity: 1;
+   margin-top: -10px;
+   transition-delay: 0.3s;
+}
+.gallery .card .imgHolder img {
+   height: 300px;
+   width: 360px;
+}
+.tours {
+   position: relative;
+   min-height: 100%;
+   padding-top: 15%;
+}
